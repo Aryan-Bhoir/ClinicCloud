@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="display: flex; gap: 20px;">
+
+    <div style="flex: 3;">
+        <h1>Doctor List</h1>
+        <hr>
+
+        <form method="GET" style="margin-bottom: 20px;">
+            <input type="text" name="search" value="{{ search }}" placeholder="Search by name"
+                   style="padding: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+            <button type="submit" style="padding: 10px 20px; background: #0984e3; color: white; border: none; border-radius: 5px;">
+                Search
+            </button>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Specialization</th>
+                        <th>Phone</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in doctors %}
+                    <tr>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.specialization }}</td>
+                        <td>{{ i.phone }}</td>
+                        <td><a class="btn-edit" href="/edit_doctor/{{ i.id }}">Edit</a></td>
+                        <td><a class="btn-delete" href="/delete_doctor/{{ i.id }}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE FILTER -->
+    <div style="flex: 1;">
+        <h2>Filter by Specialization</h2>
+
+        <h3><a href="{% url 'doctor_list' %}">All</a></h3>
+
+        {% for sp in specializations %}
+            <h3><a href="?specialization={{ sp }}">{{ sp }}</a></h3>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

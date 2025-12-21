@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form-card">
+    <h1>Edit Appointment</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <div class="btn-container">
+            <button type="reset" class="btn-reset">Reset</button>
+            <button type="submit" class="btn-save">Update</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

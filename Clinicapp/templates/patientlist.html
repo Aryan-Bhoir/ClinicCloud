@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="display: flex; gap: 20px;">
+
+    <!-- LEFT SIDE (TABLE + SEARCH) -->
+    <div style="flex: 3;">
+        <h1>Patient List</h1>
+        <hr>
+
+        <!-- Search Form -->
+        <form method="GET" style="margin-bottom: 20px;">
+            <input type="text" name="search" value="{{ search }}" placeholder="Search by name"
+                   style="padding: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+            <button type="submit" style="padding: 10px 20px; background: #0984e3; color: white; border: none; border-radius: 5px;">
+                Search
+            </button>
+        </form>
+
+        <!-- Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in patients %}
+                    <tr>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.phone }}</td>
+                        <td>{{ i.age }}</td>
+                        <td>{{ i.gender }}</td>
+                        <td>{{ i.address }}</td>
+                        <td><a class="btn-edit" href="/edit_patient/{{ i.id }}/">Edit</a></td>
+                        <td><a class="btn-delete" href="/delete_patient/{{ i.id }}/">Delete</a></td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE FILTER -->
+    <div style="flex: 1;">
+        <h2>Filter by Gender</h2>
+
+        <h3><a href="{% url 'patient_list' %}">All</a></h3>
+
+        {% for g in genders %}
+            <h3><a href="?gender={{ g }}">{{ g }}</a></h3>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

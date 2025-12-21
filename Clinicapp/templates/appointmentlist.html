@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="display: flex; gap: 20px;">
+
+    <div style="flex: 3;">
+        <h1>Appointment List</h1>
+        <hr>
+
+        <form method="GET" style="margin-bottom: 20px;">
+            <input type="text" name="search" value="{{ search }}" placeholder="Search by name/problem"
+                   style="padding: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+            <button type="submit" style="padding: 10px 20px; background: #0984e3; color: white; border: none; border-radius: 5px;">
+                Search
+            </button>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Problem</th>
+                        <th>Status</th>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in appointments %}
+                    <tr>
+                        <td>{{ i.date }}</td>
+                        <td>{{ i.time }}</td>
+                        <td>{{ i.problem }}</td>
+                        <td>{{ i.status }}</td>
+                        <td>{{ i.patient }}</td>
+                        <td>{{ i.doctor }}</td>
+
+                        <td><a class="btn-edit" href="/edit_appointment/{{ i.id }}">Edit</a></td>
+                        <td><a class="btn-delete" href="/delete_appointment/{{ i.id }}">Delete</a></td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE FILTER -->
+    <div style="flex: 1;">
+        <h2>Filter by Status</h2>
+
+        <h3><a href="{% url 'appointment_list' %}">All</a></h3>
+
+        {% for st in statuses %}
+            <h3><a href="?status={{ st }}">{{ st }}</a></h3>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

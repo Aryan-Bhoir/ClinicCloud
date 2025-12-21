@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card-container">
+    <div class="card patient-card">
+        <h2>Total Patients</h2>
+        <p>{{ total_patients }}</p>
+    </div>
+
+    <div class="card doctor-card">
+        <h2>Total Doctors</h2>
+        <p>{{ total_doctors }}</p>
+    </div>
+
+    <div class="card appointment-card">
+        <h2>Total Appointments</h2>
+        <p>{{ total_appointments }}</p>
+    </div>
+</div>
+
+{% endblock %}

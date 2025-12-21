@@ -1,0 +1,328 @@
+/* ===================================
+   GLOBAL PAGE STYLING
+=================================== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* ===================================
+   SIDEBAR
+=================================== */
+
+
+
+.sidebar{
+    width: 220px;
+    background-color: #2d3436;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    color: white;
+}
+
+.sidebar h2{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: #dfe6e9;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #636e72;
+    color: white;
+}
+
+.sidebar b {
+    margin-top: 15px;
+    display: block;
+    color: #81ecec;
+}
+
+.logout {
+    margin-top: 30px;
+    color: #ff7675 !important;
+}
+
+.logout:hover {
+    background-color: #d63031 !important;
+}
+
+/* ===================================
+   MAIN CONTENT AREA
+=================================== */
+
+.content {
+    margin-left: 260px;
+    padding: 30px;
+}
+
+/* ===================================
+   DASHBOARD CARDS
+=================================== */
+
+.card-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 260px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    border-left: 6px solid #0984e3;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #2d3436;
+}
+
+.card p {
+    margin: 8px 0 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #0984e3;
+}
+
+.patient-card {
+    border-left-color: #00b894;
+}
+.patient-card p {
+    color: #00b894;
+}
+
+.doctor-card {
+    border-left-color: #6c5ce7;
+}
+.doctor-card p {
+    color: #6c5ce7;
+}
+
+.appointment-card {
+    border-left-color: #d63031;
+}
+.appointment-card p {
+    color: #d63031;
+}
+
+/* ===================================
+   LOGIN PAGE DESIGN
+=================================== */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 0; /* override sidebar offset */
+    padding: 0;
+    background-color: #dfe6e9;
+}
+
+.login-card {
+    width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+.login-card input {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #b2bec3;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.login-card button {
+    width: 95%;
+    padding: 12px;
+    background-color: #0984e3;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.login-card button:hover {
+    background-color: #74b9ff;
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+/* Hide sidebar on login page */
+body.login-page .sidebar {
+    display: none;
+}
+
+body.login-page .content {
+    margin-left: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* ===================================
+   FORM PAGE DESIGN
+=================================== */
+
+.form-card {
+    background: white;
+    width: 450px;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px auto;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+}
+
+.form-card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2d3436;
+    font-size: 24px;
+}
+
+form table {
+    width: 100%;
+}
+
+form table td {
+    padding: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b2bec3;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-save {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-save:hover {
+    background-color: #74b9ff;
+}
+
+.btn-reset {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #636e72;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-reset:hover {
+    background-color: #b2bec3;
+}
+
+/* ===================================
+   TABLE DESIGN
+=================================== */
+
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+table thead {
+    background-color: #0984e3;
+    color: white;
+}
+
+table thead th {
+    padding: 12px;
+    text-align: left;
+}
+
+table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #dcdde1;
+}
+
+table tbody tr:hover {
+    background-color: #f1f2f6;
+}
+
+.btn-edit {
+    padding: 6px 12px;
+    background-color: #6c5ce7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-edit:hover {
+    background-color: #a29bfe;
+}
+
+.btn-delete {
+    padding: 6px 12px;
+    background-color: #d63031;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-delete:hover {
+    background-color: #ff7675;
+}
