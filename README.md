@@ -67,3 +67,26 @@ After saving `README.md`, run:
 git add README.md
 git commit -m "Add README documentation"
 git push
+
+
+
+
+
+---
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+#### Patient Add
+![Add Patient](screenshots/add_patient.png)
+
+### Patient Management
+![Patient List](screenshots/patient_list.png)
+
+### Doctor Management
+![Doctor List](screenshots/doctor_list.png)
+
+### Appointment Management
+![Appointment List](screenshots/appointment_list.png)
